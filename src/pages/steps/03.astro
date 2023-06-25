@@ -1,0 +1,46 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro'
+import StepHero from '../../components/StepHero.astro';
+import Steps from '../../components/Steps.astro';
+import StepHeader from '../../components/StepHeader.astro';
+import PaymentSection from '../../components/PaymentSection.astro';
+import mapImage from '../../assets/mapa.png';
+---
+
+<PageLayout>
+	<StepHero />
+	<Steps />
+	<StepHeader />
+
+	<!-- Content Section -->
+	<section class="max-w-screen-xl mx-auto my-6 grid grid-cols-3 gap-8">
+		<!-- Form Column -->
+		<div class="col-span-3 md:col-span-2 px-4">
+			<div>
+				<h4 class="text-primary text-xl">
+					SELECCIONA TUS BOLETOS
+				</h4>
+
+				<form action="#">
+					<div class="my-4">
+						<select
+							id="Datetime"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+						>
+							<option value="1" selected>Diamante $100,00</option>
+						</select>
+					</div>
+				</form>
+
+				<div class="my-20">
+					<img src={ mapImage } alt="mapa" class="mx-auto my-12 py-12" />
+				</div>
+			</div>
+		</div>
+		<!-- EndForm Column -->
+
+		<PaymentSection href="/steps/04"/>
+	</section>
+	<!-- EndContent Section -->
+</PageLayout>
+

@@ -1,0 +1,141 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro'
+import StepHero from '../../components/StepHero.astro';
+import Steps from '../../components/Steps.astro';
+import StepHeader from '../../components/StepHeader.astro';
+import PaymentDetail from '../../components/PaymentDetail.astro';
+---
+
+<PageLayout>
+	<StepHero />
+	<Steps />
+	<StepHeader />
+
+	<!-- Content Section -->
+	<section class="max-w-screen-sm mx-auto my-16 gap-8 px-4">
+    <div class="flex">
+      <div class="mb-6 flex-1">
+        <label
+          for="cupon"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Tienes un cupón</label
+        >
+        <input
+          type="text"
+          id="cupon"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          placeholder="CUPON_123"
+          required
+        />
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-200 w-full"
+    >
+      Aplicar cupón
+    </button>
+  </section>
+
+  <section class="max-w-screen-md mx-auto my-6 gap-8 px-4">
+    <!-- Form Column -->
+    <form action="#">
+      <div class="flex">
+        <div class="mb-6 flex-1">
+          <label
+            for="card_number"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Card Number *</label
+          >
+          <input
+            type="text"
+            id="card_number"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="1234 1234 1234 1234"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="mb-6 flex-1">
+          <label
+            for="expiracy_date"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Expiracy Date *</label
+          >
+          <input
+            type="text"
+            id="expiracy_date"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="MM/YY"
+            required
+          />
+        </div>
+        <div class="mb-6 flex-1">
+          <label
+            for="cvc"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >CVC *</label
+          >
+          <input
+            type="text"
+            id="cvc"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="123"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="mb-6 flex-1">
+          <label
+            for="name_on_card"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Name on Card *</label
+          >
+          <input
+            type="text"
+            id="name_on_card"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="John Doe"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="mb-6 flex-1">
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Email *</label
+          >
+          <input
+            type="email"
+            id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="john@company.com"
+            required
+          />
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="text-white bg-sky-400 hover:bg-sky-500 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center mb-10"
+      >
+        Pagar $69.00
+      </button>
+    </form>
+    <!-- EndForm Column -->
+
+    <div class="mb-14">
+      <PaymentDetail />
+    </div>
+  </section>
+	<!-- EndContent Section -->
+</PageLayout>
+

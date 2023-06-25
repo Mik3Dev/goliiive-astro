@@ -1,0 +1,86 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro'
+import StepHero from '../../components/StepHero.astro';
+import Steps from '../../components/Steps.astro';
+import StepHeader from '../../components/StepHeader.astro';
+import EventInfo from '../../components/EventInfo.astro';
+import PaymentSection from '../../components/PaymentSection.astro';
+---
+
+<PageLayout>
+	<StepHero />
+	<Steps />
+	<StepHeader />
+
+	<!-- Content Section -->
+	<section class="max-w-screen-xl mx-auto my-6 grid grid-cols-3 gap-8">
+		<!-- Form Column -->
+		<div class="col-span-3 md:col-span-2 px-4">
+			<div>
+				<h4 class="text-primary text-lg">
+					SELECCIONA FECHA Y HORA
+				</h4>
+				<form action="#">
+					<div class="my-4">
+						<label
+							for="Datetime"
+							class="block mb-2 text-sm font-medium text-gray-900"
+							>Fecha y Hora</label
+						>
+						<select
+							id="Datetime"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+						>
+							<option value="1" selected>
+								Junio 03.2023 - 17:00 Zuria Y Nacho T
+							</option>
+						</select>
+					</div>
+					<div class="my-4">
+						<label
+							for="currency"
+							class="block mb-2 text-sm font-medium text-gray-900"
+							>Moneda</label
+						>
+						<select
+							id="currency"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+						>
+							<option value="USD" selected>Dólares USD</option>
+							<option value="VES">Bolivares VES</option>
+						</select>
+					</div>
+				</form>
+
+				<div class="mt-24">
+					<h3 class="text-gray-700 text-xl text-semibold">Sinopsis</h3>
+					<p class="text-gray-500 font-light text-sm">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cum
+						magnam vero? Dolorem, modi quos. Iure tempore magnam fugit beatae
+						non exercitationem ab ipsa repudiandae, quis magni, tenetur natus,
+						facere dicta nihil optio velit dolore vitae! Accusamus aut,
+						sapiente iure aperiam suscipit veniam dolor in voluptatem ipsam
+						minus aliquam a?
+					</p>
+				</div>
+
+				<div class="mt-24">
+					<h3 class="text-gray-700 text-xl text-semibold">
+						Información del evento
+					</h3>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-12">
+						<EventInfo />
+						<EventInfo />
+						<EventInfo />
+						<EventInfo />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- EndForm Column -->
+
+		<PaymentSection href="/steps/02"/>
+	</section>
+	<!-- EndContent Section -->
+</PageLayout>
+

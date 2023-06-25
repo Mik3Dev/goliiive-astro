@@ -1,0 +1,67 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  price: string;
+  image?: string | null;
+}
+
+const { id, title, description, price, image } = Astro.props;
+---
+
+<div
+  class="flex items-center bg-white border border-gray-200 rounded-lg shadow my-2 mx-h-16"
+>
+  <div>
+    <img
+      src={ image }
+      alt={ title }
+      class="h-24 rounded-l-lg"
+    />
+  </div>
+  <div
+    class="flex flex-col justify-between p-4 leading-normal flex-1"
+  >
+    <div class="mb-2 text-normal tracking-tight">
+    </div>
+    <p class="uppercase text-sm">{ title }</p>
+    <p class="font-extralight text-xs text-gray-400 my-1">
+      { description }
+    </p>
+    <p class="text-sm">{ price }</p>
+  </div>
+
+
+  <div class="inline-flex rounded-md shadow-sm mx-2" role="group">
+    <button type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px rounded-l-lg border font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all text-sm">
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        class="h-4 w-4 stroke-2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15"></path>
+      </svg>
+    </button>
+    <button type="button" class="inline-flex items-center px-2 py-2 text-sm font-medium  border-t border-b text-lg" disabled>
+      1
+    </button>
+    <button type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px rounded-r-lg border font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all text-sm">
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        class="h-4 w-4 stroke-2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+      </svg>
+    </button>
+  </div>
+</div>

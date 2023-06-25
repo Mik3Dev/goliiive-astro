@@ -1,0 +1,24 @@
+---
+interface Props {
+  key: string;
+  title: string;
+  subtitle: string | null;
+  checked: boolean;
+}
+
+const { key, title, subtitle, checked } = Astro.props;
+---
+
+<li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+  <div class="relative flex items-start w-full">
+    <div class="flex items-center h-5">
+      <input id={ 'hs-list-group-item-radio-' + key } name="hs-list-group-item-radio" type="radio" class="border-gray-200 rounded-full dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked={ checked }>
+    </div>
+    <label for={ 'hs-list-group-item-radio-' + key } class="ml-3 block w-full font-semibold text-gray-600">
+      <span class="uppercase">
+        { title }
+      </span>
+      <span class="block text-xs font-normal text-gray-400">{ subtitle }</span>
+    </label>
+  </div>
+</li>

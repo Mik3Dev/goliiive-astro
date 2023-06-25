@@ -1,0 +1,29 @@
+---
+import ServiceItem from "./ServiceItem.astro";
+const services = [
+  {
+    id: '1',
+    title: 'T-shirt Talla S',
+    description: 'Ideal for individuals that need a custom solution with custom tools.',
+    price: "$100,00",
+    image: "http://via.placeholder.com/200x200"
+  },
+  {
+    id: '2',
+    title: 'Servicios Adicionales',
+    description: 'Ideal for individuals that need a custom solution with custom tools.',
+    price: "$100,00",
+    image: "http://via.placeholder.com/200x200"
+  }
+]
+---
+
+{ services.map(service => (
+  <ServiceItem
+    id={ service.id }
+    title={ service.title }
+    description={ service.description }
+    price={ service.price }
+    image={ service.image }
+  />
+))

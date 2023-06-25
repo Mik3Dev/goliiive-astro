@@ -4,6 +4,10 @@ import visa from '../assets/visa.png'
 import mastercard from '../assets/mastercard.png'
 import paypal from '../assets/paypal.png'
 
+interface Props {
+  href?: string;
+}
+
 const items = [
   {
     id: 1,
@@ -22,7 +26,10 @@ const items = [
     place: 'Terraza del CCCT - 14 Abril',
   }
 ]
+
+const { href } = Astro.props
 ---
+
 <!-- Payments Column -->
 <div class="col-span-3 md:col-span-1 px-4">
   <div
@@ -76,12 +83,12 @@ const items = [
       />
       <img class="h-16 mx-2" src={ paypal } alt="paypal" />
     </div>
-    <button
-      type="button"
-      class="block w-full text-white bg-primary hover:bg-sky-700 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 my-2"
+    <a
+      class="block w-full text-center text-white bg-primary hover:bg-sky-700 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 my-2"
+      href={ href || '#' }
     >
       Continuar
-    </button>
+    </a>
     <div class="text-xs my-2 font-light text-gray-400 text-center">
       **No incluye impuestos ni comisiones
     </div>

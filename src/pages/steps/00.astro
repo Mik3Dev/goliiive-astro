@@ -1,0 +1,67 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro'
+import StepHero from '../../components/StepHero.astro';
+import Steps from '../../components/Steps.astro';
+import StepHeader from '../../components/StepHeader.astro';
+import EventInfo from '../../components/EventInfo.astro';
+import DateSelector from '../../components/DateSelector.astro';
+import visa from '../../assets/visa.png'
+import mastercard from '../../assets/mastercard.png'
+import paypal from '../../assets/paypal.png'
+---
+
+<PageLayout>
+	<StepHero />
+	<Steps />
+	<StepHeader />
+
+	<!-- Content Section -->
+  <section class="max-w-screen-xl mx-auto my-6 gap-8 px-4">
+    <DateSelector />
+
+    <div class="mt-10">
+      <h3 class="text-gray-700 text-xl text-semibold">
+        Información del evento
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-12">
+        <EventInfo />
+        <EventInfo />
+      </div>
+    </div>
+
+    <div class="mt-24">
+      <h3 class="text-gray-700 text-xl text-semibold">Sinopsis</h3>
+      <p class="text-gray-500 font-light text-sm">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cum
+        magnam vero? Dolorem, modi quos. Iure tempore magnam fugit beatae
+        non exercitationem ab ipsa repudiandae, quis magni, tenetur natus,
+        facere dicta nihil optio velit dolore vitae! Accusamus aut,
+        sapiente iure aperiam suscipit veniam dolor in voluptatem ipsam
+        minus aliquam a?
+      </p>
+    </div>
+
+    <div class="flex flex-col mx-auto max-w-sm my-16">
+      <h4 class="text-gray-500 text-center my-2 items-center flex mx-auto">Desde <span class="text-4xl mx-2">$17.45</span></h4>
+      <a class="mx-2 py-2 px-4 inline-flex justify-center items-center gap-2  border-transparent font-semibold bg-warning text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 transition-all text-sm rounded-md" href="/stes/01">
+        Comprar Ahora
+      </a>
+      <div class="flex justify-center">
+        <img class="max-h-16 mx-2" src={ visa }/>
+        <img class="max-h-16 mx-2" src={ mastercard }/>
+        <img class="max-h-16 mx-2" src={ paypal }/>
+      </div>
+    </div>
+
+    <h4 class="text-xl text-gray-500 uppercase my-2">Eventos Relacionados</h4>
+    <div class="flex justify-between mb-10">
+      {
+        [1, 2, 3, 4].map(item =>
+          <img class="h-auto" src="http://via.placeholder.com/200x200"/>
+        )
+      }
+    </div>
+  </section>
+	<!-- EndContent Section -->
+</PageLayout>
+

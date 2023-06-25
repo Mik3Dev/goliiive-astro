@@ -1,6 +1,16 @@
 ---
 import Nabvar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+
+interface Props {
+  hasNavbar?: boolean;
+}
+
+let { hasNavbar } = Astro.props
+if (hasNavbar === undefined) {
+  hasNavbar = true
+}
+console.log(hasNavbar)
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +18,34 @@ import Footer from '../components/Footer.astro';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoLiiive</title>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <style>
+      /* Estilos adicionales */
+      h1 {
+        font-family: 'Oswald', sans-serif;
+      }
+
+      h2 {
+        font-family: 'Oswald', sans-serif;
+      }
+      
+      body, p, button {
+        font-family: 'Lato', sans-serif;
+      }
+      
+      .button-long {
+        width: 100%;
+      }
+    </style>
 </head>
-<body>
-  <Nabvar />
+<body class="bg-white">
+  {
+    hasNavbar && <Nabvar />
+  }
   <slot />
   <Footer />
+
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
 </body>
 </html>

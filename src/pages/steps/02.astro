@@ -1,0 +1,56 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro'
+import StepHero from '../../components/StepHero.astro';
+import Steps from '../../components/Steps.astro';
+import StepHeader from '../../components/StepHeader.astro';
+import PaymentSection from '../../components/PaymentSection.astro';
+import PriceSelector from '../../components/PriceSelector.astro';
+---
+
+<PageLayout>
+	<StepHero />
+	<Steps />
+	<StepHeader />
+
+	<!-- Content Section -->
+	<section class="max-w-screen-xl mx-auto my-6 grid grid-cols-3 gap-8">
+		<!-- Form Column -->
+		<div class="col-span-3 md:col-span-2 px-4">
+			<div>
+				<h4 class="text-primary text-xl">
+					SELECCIONA TIPO DE BOLETOS
+				</h4>
+
+				<div class="flex justify-center items-center mt-16">
+					<h5 class="text-primary text-lg uppercase">Ver Precios</h5>
+				</div>
+
+				<PriceSelector />
+
+
+				<div class="flex p-4 my-4 text-sm text-gray-800 rounded-lg items-center bg-[#0EA5E954]" role="alert">
+					<svg
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true"
+						class="h-12 w-12 fill-transparent stroke-white"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+					</svg>
+					<span class="sr-only">Info</span>
+					<div class="ml-4 font-light">
+						Con la compra de este combo podrás repetir y disfrutar <span class="font-semibold">Desde Cero en tres (3) oportunidades.</span> (Válido para utilizar un boleto por función) Combo personal).
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- EndForm Column -->
+
+		<PaymentSection href='/steps/03'/>
+	</section>
+	<!-- EndContent Section -->
+</PageLayout>
+
